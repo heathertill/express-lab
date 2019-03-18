@@ -19,13 +19,17 @@ app.get('/films', (req, res, next) => {
             console.log(err);
             res.sendStatus(500);
         }
-       
         let films = JSON.parse(data)
-       
         res.json(films);
-
    })
-    
+});
+
+app.post('/filmList', (req, res, next) => {
+
+    console.log(req.body);
+
+res.json("ok then")
+
 });
 
 // app.get('/', (req, res) => {
