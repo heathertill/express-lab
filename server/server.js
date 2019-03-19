@@ -33,6 +33,7 @@ app.post('/filmList', (req, res, next) => {
             res.sendStatus(500);
         }
         let films = JSON.parse(data);
+      
         films.push(req.body);
         fs.writeFile(path.join(__dirname, './data/films.json'), JSON.stringify(films, null, 2), err => {
                 if (err) {
@@ -40,7 +41,7 @@ app.post('/filmList', (req, res, next) => {
                     console.log(err);
                     res.sendStatus(500);
                 }
-                res.json('Thanks for you input!!!');
+                res.json('Thanks for your input!!!');
         });
     });
 });
@@ -50,4 +51,4 @@ app.post('/filmList', (req, res, next) => {
 
 // });
 
-app.listen(3000);
+app.listen(3000, () => console.log('Server listening on 3000!'));

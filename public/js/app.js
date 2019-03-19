@@ -11,9 +11,10 @@ const getFilms = () => {
             }</i></li>
         `);
         });
-    }).catch((err) => {
-        console.log(err);
-    });
+    })
+    //     .catch((err) => {
+    //     console.log(err);
+    // });
 }
 
 getFilms();
@@ -36,7 +37,8 @@ $('.btn').click(e => {
             $('[name="filmTitle"]').val("");
             
             getFilms();
-    }).catch((err) => {
-        console.log(err);
-    });
+        })
+    //     .catch((err) => {
+    //     console.log(err);
+    // });
 });
