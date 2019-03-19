@@ -1,22 +1,10 @@
 [
-  {
-    "name": "Heather",
-    "filmTitle": "Big Fish"
-  },
-  {
-    "name": "Davis",
-    "filmTitle": "Star Wars"
-  },
-  {
-    "name": "bob",
-    "filmTitle": "dumb"
-  },
-  {
-    "name": "Harry",
-    "filmTitle": "Toy Story"
-  },
-  {
-    "name": "Will",
-    "filmTitle": "Return of the Jedi"
-  }
+    {
+        "name": "Heather",
+        "filmTitle": "Big Fish"
+    },
+    {
+        "name": "Davis",
+        "filmTitle": "Star Wars"
+    }
 ]
