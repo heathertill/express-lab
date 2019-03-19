@@ -1,15 +1,20 @@
-$.ajax({
-    method: 'GET',
-    url: '/films'
-}).then(films => {
-    films.forEach(film => {
-        $('.list-group').append(`
-            <li class="list-group-item">${film.name} likes <i>${
-            film.filmTitle
-        }</i></li>
-    `);
+const getFilms = () => {
+    $.ajax({
+        method: 'GET',
+        url: '/films'
+    }).then(films => {
+        $('.list-group').empty();
+        films.forEach(film => {
+            $('.list-group').append(`
+                <li class="list-group-item">${film.name} likes <i>${
+                film.filmTitle
+            }</i></li>
+        `);
+        });
     });
-});
+}
+
+getFilms();
 
 $('.btn').click(e => {
     e.preventDefault();
@@ -19,5 +24,15 @@ $('.btn').click(e => {
         filmTitle: $('[name="filmTitle"]').val()
     };
 
-    console.log(body);
+    $.ajax({
+        method: 'POST',
+        url: '/filmList',
+        data: body
+    })
+        .then(() => {
+            $('[name="name"]').val("");
+            $('[name="filmTitle"]').val("");
+            
+            getFilms();
+    })
 });
